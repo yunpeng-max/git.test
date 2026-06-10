@@ -1,0 +1,511 @@
+---
+import "../styles/global.css";
+
+const fruits = [
+  { name: "西瓜", en: "Watermelon", desc: "皮薄汁多，沙瓤甘甜。每一口都是夏天的味道，从田间到餐桌不超过四十八小时。", emoji: "🍉" },
+  { name: "香蕉", en: "Banana", desc: "自然成熟，不催不染。表皮金黄斑点是甜度的信号，果肉绵密，回味悠长。", emoji: "🍌" },
+  { name: "苹果", en: "Apple", desc: "高山果园，昼夜温差锁住糖分。脆而不硬，酸甜平衡，一颗苹果就是一方水土。", emoji: "🍎" },
+  { name: "菠萝", en: "Pineapple", desc: "热带阳光的浓缩。手工采摘，去冠去眼，金黄果肉自带花香和蜜香。", emoji: "🍍" },
+  { name: "榴莲", en: "Durian", desc: "猫山王品种，树熟落地。奶油质地，苦甜交响，懂得人不需要多言。", emoji: "🫐" },
+  { name: "山竹", en: "Mangosteen", desc: "果中皇后，雪白果瓣如蒜似玉。清甜中带着若有若无的酸，解榴莲的燥。", emoji: "🍑" },
+];
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="果实 Essence Fruit — 只选应季好水果，从产地直送到你家。" />
+    <title>果实 Essence Fruit — 应季好水果</title>
+  </head>
+  <body>
+    <main>
+      <!-- ═══ Hero ═══ -->
+      <section class="hero" aria-label="品牌介绍">
+        <div class="hero-inner">
+          <p class="hero-overline reveal" data-reveal="fade-up" style="--reveal-delay: 0">应季 · 产地直达</p>
+          <h1 class="hero-heading reveal" data-reveal="focus-in" style="--reveal-delay: 1">
+            真正好的水果<br />不需要解释
+          </h1>
+          <p class="hero-sub reveal" data-reveal="fade-up" style="--reveal-delay: 2">
+            我们走遍七个省份，只做一件事：在最好的季节，<br />把最好的水果从枝头送到你的桌上。不催熟，不打蜡，不将就。
+          </p>
+          <div class="hero-cta reveal" data-reveal="fade-up" style="--reveal-delay: 3">
+            <a href="#fruits" class="btn-primary">看看这个季节有什么</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Fruit Selection ═══ -->
+      <section class="selection" id="fruits" aria-label="时令水果">
+        <div class="selection-inner">
+          <h2 class="section-heading reveal" data-reveal="focus-in">
+            当季果实
+          </h2>
+          <p class="section-lead reveal" data-reveal="fade-up">
+            每颗水果都有自己的季节。我们按节气采收，不做反季生意。
+          </p>
+          <div class="fruit-grid">
+            {fruits.map((fruit, i) => (
+              <article
+                class="fruit-card reveal"
+                data-reveal="focus-in"
+                style={`--reveal-delay: ${i}`}
+              >
+                <div class="fruit-emoji" aria-hidden="true">{fruit.emoji}</div>
+                <h3 class="fruit-name">
+                  {fruit.name}
+                  <span class="fruit-en">{fruit.en}</span>
+                </h3>
+                <p class="fruit-desc">{fruit.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Highlights ═══ -->
+      <section class="highlights" aria-label="我们的坚持">
+        <div class="highlights-inner">
+          <article class="highlight reveal" data-reveal="focus-in">
+            <h2 class="highlight-heading">只选树熟<br />不催不染</h2>
+            <p class="highlight-text">
+              水果有自己的节奏。我们等它在树上自然成熟，积累足够的糖分和风味。催熟剂和染色剂从来不在我们的词汇表里。你吃到的，就是它在枝头该有的样子。
+            </p>
+          </article>
+
+          <article class="highlight reveal" data-reveal="focus-in">
+            <h2 class="highlight-heading">48小时内<br />从枝头到餐桌</h2>
+            <p class="highlight-text">
+              凌晨采摘，当天分拣，次日冷链发出。每一颗水果都带着离开枝头时的水分和鲜度。快递箱打开的那一刻，你闻到的就是果园的味道。
+            </p>
+          </article>
+
+          <article class="highlight reveal" data-reveal="focus-in">
+            <h2 class="highlight-heading">七省产地<br />跟着季节走</h2>
+            <p class="highlight-text">
+              新疆的哈密瓜、海南的芒果、云南的石榴、陕西的猕猴桃。每个产地我们只合作一两户果农，他们种什么，我们卖什么。不是我们去挑水果，是水果挑我们。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ═══ Narrative ═══ -->
+      <section class="narrative" aria-label="品牌故事">
+        <div class="narrative-inner reveal" data-reveal="focus-in">
+          <blockquote class="narrative-pull">
+            <p>
+              水果不会说谎。<br />
+              它长成什么样，就是什么样。
+            </p>
+          </blockquote>
+          <div class="narrative-body">
+            <p>
+              果实 Essence Fruit 始于一个很简单的念头：为什么超市里的水果越来越漂亮，却越来越没有味道？答案并不复杂——水果不是工厂产品，它需要时间、阳光、土壤和等待。而现代供应链最缺的，恰恰是等待。
+            </p>
+            <p>
+              我们不建冷库，不做反季，不签全年供应合同。每个季节有什么，就卖什么。一季的枇杷卖完就等下一年，七月的荔枝过了就不再有。这不是饥饿营销，这是水果本来该有的样子。
+            </p>
+            <p>
+              六年下来，我们的果农从两家变成了十七家。没变的是那条老规矩：树上什么颜色，箱子里就什么颜色。不抛光，不增甜，不统一规格。自然的参差，就是最好的品控。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Footer CTA ═══ -->
+      <section class="connect" id="connect" aria-label="订阅">
+        <div class="connect-inner reveal" data-reveal="focus-in">
+          <h2 class="connect-heading">尝一口<br />就知道区别了</h2>
+          <p class="connect-text">
+            每周更新应季果单。不打扰，不轰炸，有货才发。
+          </p>
+          <a href="mailto:hello@essencefruit.cn" class="btn-primary">
+            订阅果单更新
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="页脚">
+      <div class="footer-inner">
+        <span>果实 Essence Fruit</span>
+        <nav aria-label="页脚导航">
+          <a href="#">当季果单</a>
+          <a href="#">产地故事</a>
+          <a href="#">联系果农</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -48px 0px" }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const heroReveals = document.querySelectorAll(".hero .reveal");
+    heroReveals.forEach((el) => {
+      const delay = parseInt(el.style.getPropertyValue("--reveal-delay") || "0");
+      setTimeout(() => el.classList.add("is-visible"), 200 + delay * 120);
+    });
+  });
+</script>
+
+<style is:global>
+  /* ═══════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════ */
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: 100svh;
+    padding: var(--page-gutter);
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    padding-block: var(--space-5xl) var(--space-4xl);
+  }
+
+  .hero-overline {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-block-end: var(--space-lg);
+  }
+
+  .hero-heading {
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-block-end: var(--space-xl);
+  }
+
+  .hero-sub {
+    font-size: var(--text-lg);
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-block-end: var(--space-2xl);
+    max-width: 540px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     PRIMARY BUTTON
+     ═══════════════════════════════════════════════════ */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background var(--duration-fast) var(--ease-out-quart),
+      transform var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .btn-primary:hover {
+    background: oklch(0.38 0.16 258);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     SECTION HEADINGS (shared)
+     ═══════════════════════════════════════════════════ */
+  .section-heading {
+    font-size: var(--text-3xl);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-block-end: var(--space-md);
+  }
+
+  .section-lead {
+    font-size: var(--text-lg);
+    color: var(--color-muted);
+    max-width: 480px;
+    margin-block-end: var(--space-4xl);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     FRUIT SELECTION
+     ═══════════════════════════════════════════════════ */
+  .selection {
+    padding: var(--space-5xl) var(--page-gutter);
+  }
+
+  .selection-inner {
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+
+  .fruit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2xl);
+  }
+
+  .fruit-card {
+    padding: var(--space-xl);
+    border: 1px solid var(--color-faint);
+    transition: border-color var(--duration-normal) var(--ease-out-quart);
+  }
+
+  .fruit-card:hover {
+    border-color: var(--color-primary);
+  }
+
+  .fruit-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-block-end: var(--space-md);
+  }
+
+  .fruit-name {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-block-end: var(--space-xs);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .fruit-en {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--color-muted);
+    letter-spacing: 0;
+  }
+
+  .fruit-desc {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     HIGHLIGHTS
+     ═══════════════════════════════════════════════════ */
+  .highlights {
+    padding: var(--space-5xl) var(--page-gutter);
+    background: var(--color-surface);
+  }
+
+  .highlights-inner {
+    max-width: 1100px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3xl);
+  }
+
+  .highlight-heading {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-block-end: var(--space-md);
+  }
+
+  .highlight-text {
+    font-size: var(--text-base);
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     NARRATIVE
+     ═══════════════════════════════════════════════════ */
+  .narrative {
+    padding: var(--space-5xl) var(--page-gutter);
+  }
+
+  .narrative-inner {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .narrative-pull {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-block-end: var(--space-3xl);
+    padding: 0;
+    border: 0;
+  }
+
+  .narrative-body {
+    color: var(--color-muted);
+    line-height: 1.75;
+  }
+
+  .narrative-body p {
+    max-width: var(--measure);
+    margin-block-end: var(--space-lg);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     CONNECT (Footer CTA)
+     ═══════════════════════════════════════════════════ */
+  .connect {
+    padding: var(--space-5xl) var(--page-gutter);
+    background: var(--color-surface);
+  }
+
+  .connect-inner {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .connect-heading {
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-block-end: var(--space-lg);
+  }
+
+  .connect-text {
+    font-size: var(--text-lg);
+    color: var(--color-muted);
+    margin-block-end: var(--space-2xl);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ */
+  .footer {
+    padding: var(--space-xl) var(--page-gutter);
+    border-top: 1px solid var(--color-faint);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+
+  .footer-inner nav {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer-inner nav a {
+    transition: color var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .footer-inner nav a:hover {
+    color: var(--color-ink);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     REVEAL ANIMATIONS
+     ═══════════════════════════════════════════════════ */
+  .reveal {
+    opacity: 0;
+  }
+
+  .reveal[data-reveal="fade-up"] {
+    transform: translateY(16px);
+    transition:
+      opacity var(--duration-entrance) var(--ease-out-quart),
+      transform var(--duration-entrance) var(--ease-out-quart);
+  }
+
+  .reveal[data-reveal="fade-up"].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal[data-reveal="focus-in"] {
+    filter: blur(8px);
+    transform: scale(0.995);
+    transition:
+      opacity var(--duration-slow) var(--ease-out-expo),
+      filter var(--duration-slow) var(--ease-out-expo),
+      transform var(--duration-slow) var(--ease-out-expo);
+  }
+
+  .reveal[data-reveal="focus-in"].is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  /* ═══════════════════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════════════════ */
+  @media (max-width: 800px) {
+    .highlights-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+    }
+
+    .fruit-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-heading {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .connect-heading {
+      font-size: clamp(1.5rem, 7vw, 2.2rem);
+    }
+
+    .narrative-pull {
+      font-size: var(--text-xl);
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: var(--space-md);
+      text-align: center;
+    }
+
+    .section-heading {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>
